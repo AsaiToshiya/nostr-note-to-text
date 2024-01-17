@@ -31,6 +31,8 @@
         const event = await pool.get(relays, {
           ids: [id],
         });
+        pool.close(relays);
+
         text.value = `${event.content}
 
 https://njump.me/${nip19}`;
